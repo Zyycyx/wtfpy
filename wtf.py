@@ -35,8 +35,6 @@ class vhl:
 			dbs.insert(1,[gvnSize, gvnName, gvnMemAddr])
 			if toEcho == 1:
 				print("Variable added with name: "+gvnName)
-			else:
-				print("ToEcho ERROR")
 		except:
 			print("CNDB - ERROR AT INSERTING TO DBS")
 	#GET ALL DATA BLOCKS
@@ -69,6 +67,8 @@ class vhl:
 				for y in x:
 					if name == y:
 						dbs.remove(x)
+						if toEcho == 1:
+							print("Removed: "+x)
 		except:
 			print("DSDB - DATABLOCK NOT FOUND")
 
@@ -101,7 +101,7 @@ def RefCheck(var1, var2):
 def GetSize(var):
 	return sys.getsizeof(var)
 
-#SET ECHO
+#SET ECHO OFF
 def EchoTurnOff():
 	toEcho = 0
-	print(str(toEcho))
+	#print(str(toEcho))
