@@ -34,11 +34,12 @@ class vhl:
 			#INSERTING TO THE TOP, AFTER STANDARD BLOCK
 			dbs.insert(1,[gvnSize, gvnName, gvnMemAddr])
 			if toEcho == 1:
-				print("Variable added with name: "+gvnName)
+				print("[WTF-DBS] Variable added with name: "+gvnName)
 		except:
 			print("CNDB - ERROR AT INSERTING TO DBS")
 	#GET ALL DATA BLOCKS
 	def GetAllDB():
+		print("|---------[WTFPY - DBS]---------|")
 		print("|SIZE\t|NAME\t|Mem. Addr\t|")
 		print("--------------------------------|")
 		for x in dbs:
@@ -57,20 +58,17 @@ class vhl:
 						print(x)
 						print("--------------------------------|")
 		except:
-			print("SSDB - DATABLOCK NOT FOUND")
+			print("[WTF-DBS] SSDB - DATABLOCK NOT FOUND")
 
 	#DELETE SINGLE DATA BLOCK BY IT'S NAME
 	def DelSingleDB(name):
-		print("Deleting: "+name)
-		try:
-			for x in dbs:
-				for y in x:
-					if name == y:
-						dbs.remove(x)
-						if toEcho == 1:
-							print("Removed: "+x)
-		except:
-			print("DSDB - DATABLOCK NOT FOUND")
+		print("[WTF-DBS] Deleting: "+name)
+		for x in dbs:
+			for y in x:
+				if name == y:
+					dbs.remove(x)
+					if toEcho == 1:
+						print("[WTF-DBS] Removed: "+str(x))
 
 #________FUNCTIONS________
 
@@ -93,9 +91,11 @@ def MemAddr(var):
 #CHECK IF TWO VARIABLES ARE REFERENCED TO THE SAME OBJECTS
 def RefCheck(var1, var2):
 	if id(var1) == id(var2):
-		print("[YES] " + str(variable_kwargs(var1 = var1, var2 = var2)) + " are ref. to the same obj.")
+		bln = True
+		print("[REFCHECK]: ",bln, "(",var1,",",var2,")")
 	else:
-		print("[NO] " +str(variable_kwargs(var1 = var1, var2 = var2))+  " are NOT ref to the same obj.")
+		bln = False
+		print("[REFCHECK]: ",bln, "(",var1,",",var2,")")
 
 #GET SIZE OF A VARIABLE
 def GetSize(var):
@@ -105,3 +105,8 @@ def GetSize(var):
 def EchoTurnOff():
 	toEcho = 0
 	#print(str(toEcho))
+
+#DEREFERENCE VARIABLE BY SETTING IT'S VALUE TO NONE / NULL
+def deRef(var):
+	var = None
+	return var
