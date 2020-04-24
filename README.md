@@ -1,37 +1,40 @@
-## Welcome to GitHub Pages
+# WtfPy
 
-You can use the [editor on GitHub](https://github.com/Zyycyx/wtfpy/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### THIS MODULE IS CREATED TO:
+  - TRACK VARIABLES
+  - SEARCH IN VARIABLES
+  - HELP UNIT TESTING
+  - MODIFY VARIABLES AND LOG MODIFICATIONS
+  - MAKE EASY THE MEMORY MANAGEMENT AND
+  -	GATHERING INFORMATION FROM MEMORY
 
-### Markdown
+# AND HERE COMES THE MATTER!
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## VERSION: A0.1.BETA
+### FUNCTIONS
+```python
+	import wtf as W
 
-```markdown
-Syntax highlighted code block
+  W.VHL # VariableHandler
+	W.VHL.CNDB(VARIABLE, STOREDNAME) # CREATE NEW DATA BLOCK
+	W.VHL.GADB() # GET ALL DATA BLOCKS
+	W.VHL.SSDB(STOREDNAME) # SELECT SINGLE DATA BLOCK
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+	W.GCAI() # GET CREDITS AND INFORMATION
+	W.GRDV(VARIABLE, NAME) # GET RUNTIME DATA VALUE
+	W.SRDV(VARIABLE, NEWVALUE) # SET RUNTIME DATA VALUE
+	W.MEMADDR(VARIABLE) # GET MEMORY ADDRESS OF A VARIABLE
+	W.REFCHECK(FIRSTVARIABLE, SECVARIABLE) # CHECK IF TWO VARIABLES ARE REFERENCING TO THE SAME MEMORY ADDRESS
+  W.GS(VARIABLE) # GET SIZE OF A VARIABLE
 ```
+# DATA BLOCKS
+Data blocks are stored in a 2D array with their
+size, name(Set by user) and memory address.
+I implemented a standard data block just to check
+that it's working. You can remove it if you want.
+This data block is 'STD'.
+You can search inside this data block array, you
+can delete blocks and add blocks.
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Zyycyx/wtfpy/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
