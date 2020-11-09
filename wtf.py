@@ -2,8 +2,8 @@ import sys
 from array import *
 
 #PREDEFINED VARIABLES
-__author__= "Speti03@gmail.com"
-__version__= "A0.1.BETA"
+__author__= "pth@gmail.hu"
+__version__= "0.0.1"
 
 
 #ECHO VARIABLE
