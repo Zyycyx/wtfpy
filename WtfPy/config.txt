@@ -1,0 +1,4 @@
+# config.txt
+
+[idata]
+version = 0.0.1
