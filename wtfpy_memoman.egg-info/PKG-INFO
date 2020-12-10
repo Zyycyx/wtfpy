@@ -4,7 +4,7 @@ Version: 1.0.0
 Summary: A basic module to work with memory addresses and references.
 Home-page: https://github.com/Zyycyx/wtfpy
 Author: Zyycyx
-Author-email: pth@gmail.hu
+Author-email: peterschmidt5575@gmail.com
 License: UNKNOWN
 Description: # WtfPy
         
@@ -22,7 +22,7 @@ Description: # WtfPy
         ```python
         	import wtf 
         
-          	wtf.vhl # VariableHandler
+        	wtf.vhl # VARIABLEHANDLER
         
         	wtf.vhl.CrtNewDB(VARIABLE, STOREDNAME) # CREATE NEW DATA BLOCK
         
@@ -32,12 +32,11 @@ Description: # WtfPy
         
         	wtf.vhl.DelSingleDB(STOREDNAME) # DELETE SINGLE DATA BLOCK
         
-        	wtf.GetCredits() # GET CREDITS AND INFORMATION
-        	wtf.GetRuntmDataVal(VARIABLE, NAME) # GET RUNTIME DATA VALUE
-        	wtf.SRDV(VARIABLE, NEWVALUE) # SET RUNTIME DATA VALUE
+        	wtf.GetRuntmDataVal(VARIABLE, DISPLAYNAME) # GET RUNTIME DATA VALUE
+        	wtf.SetRuntmDataVal(VARIABLE, NEWVALUE, DISPLAYNAME) # SET RUNTIME DATA VALUE
         	wtf.MemAddr(VARIABLE) # GET MEMORY ADDRESS OF A VARIABLE
         	wtf.RefCheck(FIRSTVARIABLE, SECVARIABLE) # CHECK IF TWO VARIABLES ARE REFERENCING TO THE SAME MEMORY ADDRESS
-          	wtf.GetSize(VARIABLE) # GET SIZE OF A VARIABLE
+        	wtf.GetSize(VARIABLE) # GET SIZE OF A VARIABLE
         	wtf.EchoTurnOff() # TURN OFF CONFIRMATION MESSAGES FROM VHL
         	wtf.deRef(VARIABLE) # DE-REFERENCE A VARIABLE
         ```
@@ -53,7 +52,7 @@ Description: # WtfPy
         
         
 Platform: UNKNOWN
-Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3. 8
 Classifier: License :: OSI Approved :: MIT License
 Classifier: Operating System :: OS Independent
 Requires-Python: >=3.7

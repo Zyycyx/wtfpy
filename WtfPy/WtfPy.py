@@ -1,5 +1,4 @@
 import sys
-from array import *
 
 #ECHO VARIABLE
 toEcho = 1

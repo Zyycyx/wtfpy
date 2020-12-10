@@ -1,10 +1,4 @@
 import sys
-from array import *
-
-#PREDEFINED VARIABLES
-__author__= "pth@gmail.hu"
-__version__= "0.0.1"
-
 
 #ECHO VARIABLE
 toEcho = 1
@@ -72,10 +66,6 @@ class vhl:
 
 #________FUNCTIONS________
 
-#GET CREDITS AND INFORMATION
-def GetCredits():
-	print ("AUTHOR: \t"+__author__+"\nVERSION: \t"+__version__)
-
 #GET KWARGS DICT
 def variable_kwargs(**kwargs):
      return kwargs
@@ -83,6 +73,12 @@ def variable_kwargs(**kwargs):
 #GET RUNTIME DATA VALUE
 def GetRuntmDataVal(var, name):
 	print("[OUTPUT OF "+str(name)+"]: "+str(var))
+
+#SET RUNTIME DATA VALUE
+def SetRuntmDataVal(var, val, name):
+	oldvar = var
+	var = val
+	print("["+str(name)+" is changed TO: "+str(val)+" FROM: "+str(oldvar)+"]")
 
 #GET MEMORY ADDRESS OF A VARIABLE WHAT'S NOT STORED AS A DATA BLOCK
 def MemAddr(var):
@@ -109,4 +105,3 @@ def EchoTurnOff():
 #DEREFERENCE VARIABLE BY SETTING IT'S VALUE TO NONE / NULL
 def deRef(var):
 	var = None
-	return var
