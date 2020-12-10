@@ -5,4 +5,11 @@
 ./_config.yml
 
 # logs
-*.log
+./logs
+
+# egg
+./wtfpy_memoman.egg-info/*
+
+# manifest
+./MANIFEST.in
+

@@ -1,10 +1,11 @@
 DATE=$(shell date +%F%T)
 
 run:
+	mkdir ./tests
 	cp -rf WtfPy/* ./tests
-	python3.8 tests/run.py 
-	python3.8 tests/run.py > tests/logs/run_$(DATE).log
-	rm -rf tests/.gitignor tests/config.txt tests/WtfPy.py tests/__main__.py tests/__init__.py  tests/__pycache__
-
+	wget https://raw.githubusercontent.com/Zyycyx/wtfpy/master/testing/V0.0.2/test.py -P ./tests
+	python3.8 tests/test.py 
+	python3.8 tests/test.py > logs/tests/test_$(DATE).log
+	rm -rf ./tests
 build:
 	sudo python3.8 setup.py sdist
