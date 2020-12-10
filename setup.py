@@ -8,7 +8,7 @@ README = (HERE / "README.md").read_text()
 
 setuptools.setup(
     	name="wtfpy-memoman",
-    	version="1.0.0",
+    	version="0.0.2",
     	author="Zyycyx",
     	author_email="peterschmidt5575@gmail.com",
     	description="A basic module to work with memory addresses and references.",

@@ -9,7 +9,7 @@
   - Make easy the memory management
   -	Gathering information about your memory usage
 
-## Version 0.0.1
+## Version 0.0.2
 ### Examples
 ```python
 	import wtf 
