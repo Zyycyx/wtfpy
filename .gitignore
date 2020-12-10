@@ -3,3 +3,6 @@
 
 # config
 ./_config.yml
+
+# logs
+*.log
