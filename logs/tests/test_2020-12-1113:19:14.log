@@ -1,0 +1,19 @@
+____________________________________________
+[WTF-DBS] Variable added with name: x
+|---------[WTFPY - DBS]---------|
+|SIZE	|NAME	|Mem. Addr	|
+--------------------------------|
+28	|STD	|0x7f08fa8d2970	|
+--------------------------------|
+28	|x	|0x7f08fa8a2930	|
+--------------------------------|
+Searching for: x
+SIZE | NAME | Mem Addr. |
+[28, 'x', '0x7f08fa8a2930']
+--------------------------------|
+[WTF-DBS] Deleting: x
+[WTF-DBS] Removed: [28, 'x', '0x7f08fa8a2930']
+[OUTPUT OF y]: 2
+[y is changed TO: 3 FROM: 2]
+[REFCHECK]:  False ( 2 , 1 )
+_____________________________________________
