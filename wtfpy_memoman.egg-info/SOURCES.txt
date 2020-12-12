@@ -1,0 +1,12 @@
+MANIFEST.in
+README.md
+setup.py
+WtfPy/UsageMonitor.py
+WtfPy/WtfPy.py
+WtfPy/__init__.py
+WtfPy/__main__.py
+wtfpy_memoman.egg-info/PKG-INFO
+wtfpy_memoman.egg-info/SOURCES.txt
+wtfpy_memoman.egg-info/dependency_links.txt
+wtfpy_memoman.egg-info/requires.txt
+wtfpy_memoman.egg-info/top_level.txt

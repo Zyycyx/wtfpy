@@ -1,37 +1,36 @@
 import sys
+import psutil
+import os
 
-#ECHO VARIABLE
+# Echo parameter for VHL
 toEcho = 0
-#DEFAULT INTEGER TO TEST DATA BLOCKS
+# Default variable to be inserted into VHL
 dInt = 255
 
-#2D ARRAY TO STORE DATABLOCKS
+# Global 2D array for VHL
 dbs = [
-	#STORING STANDARD DATA BLOCK WITH NAME: 'STD'
+	# Standard datablock(DB) named 'STD'
         [sys.getsizeof(dInt), "STD", hex(id(dInt))]
       ]
 
 #__________CLASSES__________
 
-#VARIABLE HANDLER
+# VHL (Variable Handler)
 class vhl:
 
-	"""THIS IS THE VARIABLE HANDLER CLASS"""
-
-	#CREATE NEW DATA BLOCK
+	# Create new DB
 	def CrtNewDB(var, gvnName):
 		gvnSize = sys.getsizeof(var)
 		gvnMemAddr = hex(id(var))
 		try:
-			#print(toEcho) Just in case of echo is throwing error
 
-			#INSERTING TO THE TOP, AFTER STANDARD BLOCK
+			# Inserting to the top after the STD DB
 			dbs.insert(1,[gvnSize, gvnName, gvnMemAddr])
 			if toEcho == 1:
 				print("[WTF-DBS] Variable added with name: "+gvnName)
 		except:
 			print("CNDB - ERROR AT INSERTING TO DBS")
-	#GET ALL DATA BLOCKS
+	# Get all DBs
 	def GetAllDB():
 		print("|---------[WTFPY - DBS]---------|")
 		print("|SIZE\t|NAME\t|Mem. Addr\t|")
@@ -41,7 +40,7 @@ class vhl:
                         	print(y, end = "\t|")
                 	print("\n--------------------------------|")
 
-	#SEARCH FOR SINGLE DATA BLOCK BY IT'S NAME
+	# Search for a DB by it's name
 	def SrcSingleDB(name):
 		print("Searching for: " + name)
 		try:
@@ -54,7 +53,7 @@ class vhl:
 		except:
 			print("[WTF-DBS] SSDB - DATABLOCK NOT FOUND")
 
-	#DELETE SINGLE DATA BLOCK BY IT'S NAME
+	# Delete a DB by it's name
 	def DelSingleDB(name):
 		print("[WTF-DBS] Deleting: "+name)
 		for x in dbs:
@@ -66,25 +65,25 @@ class vhl:
 
 #________FUNCTIONS________
 
-#GET KWARGS DICT
+# Get kwargs for variables
 def variable_kwargs(**kwargs):
      return kwargs
 
-#GET RUNTIME DATA VALUE
-def GetRuntmDataVal(var, name):
+# Get runtime value of a variable
+def RuntmVal(var, name=""):
 	print("[OUTPUT OF "+str(name)+"]: "+str(var))
 
-#SET RUNTIME DATA VALUE
-def SetRuntmDataVal(var, val, name):
+# Set runtime value of a variable
+def SetRuntmVal(var, val, name=""):
 	oldvar = var
 	var = val
 	print("["+str(name)+" is changed TO: "+str(val)+" FROM: "+str(oldvar)+"]")
 
-#GET MEMORY ADDRESS OF A VARIABLE WHAT'S NOT STORED AS A DATA BLOCK
+# Get memory address of a variable
 def MemAddr(var):
 	return hex(id(var))
 
-#CHECK IF TWO VARIABLES ARE REFERENCED TO THE SAME OBJECTS
+# Check if two variable are referencing to the same memory address
 def RefCheck(var1, var2):
 	if id(var1) == id(var2):
 		bln = True
@@ -93,15 +92,21 @@ def RefCheck(var1, var2):
 		bln = False
 		print("[REFCHECK]: ",bln, "(",var1,",",var2,")")
 
-#GET SIZE OF A VARIABLE
+# Get size of a variable
 def GetSize(var):
 	return sys.getsizeof(var)
 
-#SET ECHO OFF
+# Get the memory usage of your program. Displaying in % and MB
+def GetMemoryUsage():
+    pid = psutil.Process(os.getpid())
+    mempcnt = pid.memory_percent()
+    inmb = (psutil.virtual_memory().total / 100 * mempcnt) / 1000000
+    print("Memory usage: %.2f%% - %.2fMB" % (mempcnt, inmb))
+
+# Turn off comfirmation messages from VHL
 def EchoTurnOff():
 	toEcho = 0
-	#print(str(toEcho))
 
-#DEREFERENCE VARIABLE BY SETTING IT'S VALUE TO NONE / NULL
+# De-reference a variable
 def deRef(var):
 	var = None
