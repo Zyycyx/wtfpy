@@ -10,28 +10,33 @@
   - Gather information about your memory usage (vhl)
 
 ## Version 0.0.2
-### Examples
+### Functions
 ```python
 	import wtf 
 
-	wtf.vhl # VARIABLEHANDLER
+	wtf.vhl # Variable handler class
 
-	wtf.vhl.CrtNewDB(VARIABLE, STOREDNAME) # CREATE NEW DATA BLOCK
+	wtf.vhl.CrtNewDB(variable, storedname) # Create new data block
 
-	wtf.vhl.GetAllDB() # GET ALL DATA BLOCKS
+	wtf.vhl.GetAllDB() # Get all data blockS
 
-	wtf.vhl.SrcSingleDB(STOREDNAME) # SELECT SINGLE DATA BLOCK
+	wtf.vhl.SrcSingleDB(storedname) # Select single data block
 
-	wtf.vhl.DelSingleDB(STOREDNAME) # DELETE SINGLE DATA BLOCK
+	wtf.vhl.DelSingleDB(storedname) # Delete single data block
 
-	wtf.GetRuntmDataVal(VARIABLE, DISPLAYNAME) # GET RUNTIME DATA VALUE
-	wtf.SetRuntmDataVal(VARIABLE, NEWVALUE, DISPLAYNAME) # SET RUNTIME DATA VALUE
-	wtf.MemAddr(VARIABLE) # GET MEMORY ADDRESS OF A VARIABLE
-	wtf.RefCheck(FIRSTVARIABLE, SECVARIABLE) # CHECK IF TWO VARIABLES ARE REFERENCING TO THE SAME MEMORY ADDRESS
-	wtf.GetSize(VARIABLE) # GET SIZE OF A VARIABLE
-	wtf.EchoTurnOff() # TURN OFF CONFIRMATION MESSAGES FROM VHL
-	wtf.deRef(VARIABLE) # DE-REFERENCE A VARIABLE
+	# Displayname is always optional
+	wtf.RuntmVal(variable, displayname) # Get runtime data value
+	wtf.SetRuntmVal(variable, newvalue, displayname) # Set runtime data value
+	wtf.MemAddr(variable) # Get memory address of a variable
+	wtf.RefCheck(first_variable, second_variable) # Check if two variable are referencing to the same memory address
+	wtf.GetSize(variable) # Get size of a variable
+	wtf.GetMemoryUsage() # Get the memory usage of your program. Displaying in % and MB
+	wtf.EchoTurnOff() # Turn off comfirmation messages from VHL
+	wtf.deRef(variable) # De-reference a variable
 ```
+
+
+
 # Data blocks
 Data blocks are stored in a 2D array with their
 size, name(Set by user) and memory address.

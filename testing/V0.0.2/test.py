@@ -20,4 +20,6 @@ wtf.RefCheck(y, x) # Check if two variables are referencing to the same address
 wtf.GetSize(y) # Get size of a variable
 wtf.EchoTurnOff() # Turn off confirmation messages from VHL
 wtf.deRef(y) # De-reference a variable
+wtf.um.getMemoryUsage()
+wtf.um.getCPUUsage()
 print("=======================================================================")

@@ -1,3 +1,4 @@
+VERSION=V0.0.2
 DATE=$(shell date +%F%T)
 
 ifeq (, $(shell which python ))
@@ -13,10 +14,18 @@ ifeq ($(PYTHON_VERSION_OK),0)
   $(error "Need python $(PYTHON_VERSION) >= $(PYTHON_VERSION_MIN)")
 endif
 
-test:
+test-online:
 	mkdir ./tests
 	cp -rf WtfPy/* ./tests
-	wget https://raw.githubusercontent.com/Zyycyx/wtfpy/master/testing/V0.0.2/test.py -P ./tests
+	wget https://raw.githubusercontent.com/Zyycyx/wtfpy/master/testing/$(VERSION)/test.py -P ./tests
+	python tests/test.py 
+	python tests/test.py > logs/tests/test_$(DATE).log
+	rm -rf ./tests
+
+test-local:
+	mkdir ./tests
+	cp -rf WtfPy/* ./tests
+	cp -rf ./testing/$(VERSION)/test.py ./tests/ 
 	python tests/test.py 
 	python tests/test.py > logs/tests/test_$(DATE).log
 	rm -rf ./tests
