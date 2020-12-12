@@ -1,7 +1,7 @@
 import sys
 
 #ECHO VARIABLE
-toEcho = 1
+toEcho = 0
 #DEFAULT INTEGER TO TEST DATA BLOCKS
 dInt = 255
 

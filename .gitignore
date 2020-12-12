@@ -5,13 +5,10 @@
 ./_config.yml
 
 # logs
-./logs
+./logs/*
 
 # egg
 ./wtfpy_memoman.egg-info/*
 
 # manifest
 ./MANIFEST.in
-
-# makefile customization
-./Makefile

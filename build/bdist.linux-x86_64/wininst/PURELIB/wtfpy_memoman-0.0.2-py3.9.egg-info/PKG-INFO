@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: wtfpy-memoman
-Version: 1.0.0
+Version: 0.0.2
 Summary: A basic module to work with memory addresses and references.
 Home-page: https://github.com/Zyycyx/wtfpy
 Author: Zyycyx
@@ -17,7 +17,7 @@ Description: # WtfPy
           - Make easy the memory management
           -	Gathering information about your memory usage
         
-        ## Version 0.0.1
+        ## Version 0.0.2
         ### Examples
         ```python
         	import wtf 
