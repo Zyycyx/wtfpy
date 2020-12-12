@@ -6,8 +6,8 @@
   - Search in variables
   - Help unit testing
   - Modify variables and log modifications
-  - Make easy the memory management
-  -	Gathering information about your memory usage
+  - Make the memory management easier
+  - Gather information about your memory usage (vhl)
 
 ## Version 0.0.2
 ### Examples
