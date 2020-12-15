@@ -1,7 +1,9 @@
+# Current version: 0.0.2.1
+
 import WtfPy as wtf
 from WtfPy import vhl
 
-print("=======================================================================")
+print("======================================================================= \n\n")
 x = 1
 y = 2
 
@@ -13,13 +15,11 @@ wtf.vhl.SrcSingleDB("x") # Search for a single data block by it's name
 
 wtf.vhl.DelSingleDB("x") # Delete a data block by it's name
 
-wtf.GetRuntmDataVal(y, "y") # Get runtime value of a variable
-wtf.SetRuntmDataVal(y, 3, "y") # Set runtime value of a variable
+wtf.RuntmVal(y, "y") # Get runtime value of a variable
+wtf.SetRuntmVal(y, 3, "y") # Set runtime value of a variable
 wtf.MemAddr(y) # Get memory address of a variable (the reference address)
 wtf.RefCheck(y, x) # Check if two variables are referencing to the same address
 wtf.GetSize(y) # Get size of a variable
-wtf.EchoTurnOff() # Turn off confirmation messages from VHL
+wtf.GetMemoryUsage() # Get  the memory usage of your program
 wtf.deRef(y) # De-reference a variable
-wtf.um.getMemoryUsage()
-wtf.um.getCPUUsage()
-print("=======================================================================")
+print("\n\n =======================================================================")
