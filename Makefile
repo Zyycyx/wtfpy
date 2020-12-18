@@ -14,6 +14,15 @@ ifeq ($(PYTHON_VERSION_OK),0)
   $(error "Need python $(PYTHON_VERSION) >= $(PYTHON_VERSION_MIN)")
 endif
 
+test-buildserver:
+	git pull
+	mkdir ./tests
+	cp -rf WtfPy/* ./tests
+	wget https://raw.githubusercontent.com/Zyycyx/wtfpy/master/testing/$(VERSION)/test.py -P ./tests
+	python tests/test.py 
+	python tests/test.py > logs/tests/test_$(DATE).log
+	rm -rf ./tests
+	
 test-online:
 	mkdir ./tests
 	cp -rf WtfPy/* ./tests
