@@ -15,29 +15,29 @@ ifeq ($(PYTHON_VERSION_OK),0)
   $(error "Need python $(PYTHON_VERSION) >= $(PYTHON_VERSION_MIN)")
 endif
 
-test-buildserver:
+run-buildserver:
 	git pull
 	mkdir ./tests
 	cp -rf WtfPy/* ./tests
 	wget https://raw.githubusercontent.com/Zyycyx/wtfpy/master/testing/$(VERSION)/test.py -P ./tests
 	python tests/test.py 
-	python tests/test.py > logs/tests/test_$(DATE).log
+	#python tests/test.py > logs/tests/test_$(DATE).log
 	rm -rf ./tests
 	
-test-online:
+run-online:
 	mkdir ./tests
 	cp -rf WtfPy/* ./tests
 	wget https://raw.githubusercontent.com/Zyycyx/wtfpy/master/testing/$(VERSION)/test.py -P ./tests
 	python3 tests/test.py 
-	python3 tests/test.py > logs/tests/test_$(DATE).log
+	#python3 tests/test.py > logs/tests/test_$(DATE).log
 	rm -rf ./tests
 
-test-local:
+run-local:
 	mkdir ./tests
 	cp -rf WtfPy/* ./tests
 	cp -rf ./testing/$(VERSION)/test.py ./tests/ 
 	python3 tests/test.py 
-	python3 tests/test.py > logs/tests/test_$(DATE).log
+	#python3 tests/test.py > logs/tests/test_$(DATE).log
 	rm -rf ./tests
 build_package:
 	rm dist/*

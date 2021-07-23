@@ -6,9 +6,10 @@ from WtfPy import vhl
 print("======================================================================= \n\n")
 x = 1
 y = 2
-
+z = "asdsadasdasdasdasdasdasdasd"
 wtf.vhl.CrtNewDB(x, "x") # Create a new data block
-
+wtf.vhl.CrtNewDB(y, "y")
+wtf.vhl.CrtNewDB(z, "z")
 wtf.vhl.GetAllDB() # Get all data blocks
 
 wtf.vhl.SrcSingleDB("x") # Search for a single data block by it's name
