@@ -5,7 +5,7 @@ from WtfPy import vhl
 
 print("======================================================================= \n\n")
 x = 1
-y = 2
+y = 3.14
 z = "asdsadasdasdasdasdasdasdasd"
 wtf.vhl.CrtNewDB(x, "x") # Create a new data block
 wtf.vhl.CrtNewDB(y, "y")
@@ -23,4 +23,5 @@ wtf.RefCheck(y, x) # Check if two variables are referencing to the same address
 wtf.GetSize(y) # Get size of a variable
 wtf.GetMemoryUsage() # Get  the memory usage of your program
 wtf.deRef(y) # De-reference a variable
-print("\n\n =======================================================================")
+wtf.GetType(y) # Get type of variable
+print("\n=======================================================================")

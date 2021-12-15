@@ -29,7 +29,7 @@ class vhl:
 			if toEcho == 1:
 				print("[WTF-DBS] Variable added with name: "+gvnName)
 		except:
-			print("CNDB - ERROR AT INSERTING TO DBS")
+			raise Exception("CNDB - ERROR AT INSERTING TO DBS")
 	# Get all DBs
 	def GetAllDB():
 		print("|---------[WTFPY - DBS]---------|")
@@ -51,7 +51,7 @@ class vhl:
 						print(x)
 						print("--------------------------------|")
 		except:
-			print("[WTF-DBS] SSDB - DATABLOCK NOT FOUND")
+			raise Exception("[WTF-DBS] SSDB - DATABLOCK NOT FOUND")
 
 	# Delete a DB by it's name
 	def DelSingleDB(name):
@@ -110,3 +110,8 @@ def EchoTurnOff():
 # De-reference a variable
 def deRef(var):
 	var = None
+
+def GetType(var):
+    if str(type(var))[8:].strip("'>") == "str": print("String") 
+    if str(type(var))[8:].strip("'>") == "int": print("Integer") 
+    if str(type(var))[8:].strip("'>") == "float": print("Float")
