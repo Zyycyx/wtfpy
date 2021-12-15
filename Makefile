@@ -6,7 +6,7 @@ DATE=$(shell date +%F%T)
 #  $(error "PYTHON=$(PYTHON) not found in $(PATH)")
 #endif
 
-PYTHON_VERSION_MIN=3.6
+PYTHON_VERSION_MIN=3.8
 PYTHON_VERSION=$(shell $(PYTHON) -c 'import sys; print("%d.%d"% sys.version_info[0:2])' )
 PYTHON_VERSION_OK=$(shell $(PYTHON) -c 'import sys;\
   print(int(float("%d.%d"% sys.version_info[0:2]) >= $(PYTHON_VERSION_MIN)))' )
@@ -41,11 +41,16 @@ run-local:
 	rm -rf ./tests
 build_package:
 	rm dist/*
-	python setup.py build
-	python setup.py clean
-	python setup.py sdist
-	python setup.py bdist
-	python setup.py bdist_dumb
-	python setup.py bdist_rpm
-
+	python3 setup.py build
+	python3 setup.py sdist
+	python3 setup.py bdist
+	python3 setup.py bdist_dumb
+	python3 setup.py bdist_rpm
+	mv dist/* ./manpackages
+	python3 setup.py sdist bdist_wheel
+	python3 setup.py clean
 	
+upload_test:
+	twine upload --repository testpypi dist/*
+publish:
+	twine upload dist/*

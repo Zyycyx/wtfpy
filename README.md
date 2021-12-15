@@ -7,7 +7,7 @@
   - Help unit testing
   - Modify variables and log modifications
   - Make the memory management easier
-  - Gather information about your memory usage (vhl)
+  - Gather information about your memory usage
 
 ## Version 0.0.2
 ### Functions

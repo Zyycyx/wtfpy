@@ -1,19 +1,22 @@
-Metadata-Version: 2.1
-Name: wtfpy-memoman
-Version: 0.0.2
-Summary: A basic module to work with memory addresses and references.
-Home-page: https://github.com/Zyycyx/wtfpy
-Author: Zyycyx
-Author-email: peterschmidt5575@gmail.com
-License: UNKNOWN
-Platform: UNKNOWN
-Classifier: Programming Language :: Python :: 3.8
-Classifier: License :: OSI Approved :: MIT License
-Classifier: Operating System :: OS Independent
-Requires-Python: >=3.8
-Description-Content-Type: text/markdown
-License-File: LICENSE
+%define name WtfPy
+%define version 0.0.2
+%define unmangled_version 0.0.2
+%define release 1
 
+Summary: A basic module to work with memory addresses and references.
+Name: %{name}
+Version: %{version}
+Release: %{release}
+Source0: %{name}-%{unmangled_version}.tar.gz
+License: UNKNOWN
+Group: Development/Libraries
+BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
+Prefix: %{_prefix}
+BuildArch: noarch
+Vendor: Zyycyx <peterschmidt5575@gmail.com>
+Url: https://github.com/Zyycyx/wtfpy
+
+%description
 # WtfPy
 
 
@@ -66,3 +69,17 @@ can delete blocks and add blocks.
 
 
 
+%prep
+%setup -n %{name}-%{unmangled_version} -n %{name}-%{unmangled_version}
+
+%build
+python3 setup.py build
+
+%install
+python3 setup.py install --single-version-externally-managed -O1 --root=$RPM_BUILD_ROOT --record=INSTALLED_FILES
+
+%clean
+rm -rf $RPM_BUILD_ROOT
+
+%files -f INSTALLED_FILES
+%defattr(-,root,root)

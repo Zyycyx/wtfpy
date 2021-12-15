@@ -95,7 +95,7 @@ def RefCheck(var1, var2):
 
 # Get size of a variable
 def GetSize(var):
-	return sys.getsizeof(var)
+	print("Size: ", sys.getsizeof(var), "bytes")
 
 # Get the memory usage of your program. Displaying in % and MB
 def GetMemoryUsage():

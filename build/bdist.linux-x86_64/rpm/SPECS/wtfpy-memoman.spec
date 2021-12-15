@@ -51,7 +51,8 @@ Url: https://github.com/Zyycyx/wtfpy
 	wtf.GetSize(variable) # Get size of a variable
 	wtf.GetMemoryUsage() # Get the memory usage of your program. Displaying in % and MB
 	wtf.EchoTurnOff() # Turn off comfirmation messages from VHL
-	wtf.deRef(variable) # De-reference a variable
+	wtf.DeRef(variable) # De-reference a variable
+	wtf.GetType(var) # Get type of variable
 ```
 
 
