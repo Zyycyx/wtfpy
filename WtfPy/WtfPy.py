@@ -109,7 +109,7 @@ def EchoTurnOff():
 	toEcho = 0
 
 # De-reference a variable
-def deRef(var):
+def DeRef(var):
 	var = None
 
 def GetType(var):
