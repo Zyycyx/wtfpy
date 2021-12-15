@@ -22,6 +22,6 @@ wtf.MemAddr(y) # Get memory address of a variable (the reference address)
 wtf.RefCheck(y, x) # Check if two variables are referencing to the same address
 wtf.GetSize(y) # Get size of a variable
 wtf.GetMemoryUsage() # Get  the memory usage of your program
-wtf.deRef(y) # De-reference a variable
+wtf.DeRef(y) # De-reference a variable
 wtf.GetType(y) # Get type of variable
 print("\n=======================================================================")
